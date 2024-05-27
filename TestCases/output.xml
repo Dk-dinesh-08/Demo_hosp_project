@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-27T12:23:29.109109" rpa="false" schemaversion="5">
+<suite id="s1" name="Test valid user payment" source="D:\Pilot_Project_Smart_hospital_Team3\TestCases\Test_valid_user_payment.robot">
+<test id="s1-t1" name="Payment Test Template" line="20">
+<kw name="Open the browser with url" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:29.767084" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-05-27T12:23:29.767084" elapsed="1.796349"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:31.563433" level="INFO">Opening url 'https://demo.smart-hospital.in/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-27T12:23:31.563433" elapsed="2.599017"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-27T12:23:34.165290" elapsed="0.055635"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-05-27T12:23:34.223307" elapsed="0.002476"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:29.767084" elapsed="4.458699"/>
+</kw>
+<kw name="validate payment method">
+<kw name="click the log in button" owner="GenericResources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:34.227160" level="INFO">Clicking element 'xpath://ul[@class="top-right"]//a'.</msg>
+<arg>${login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:34.227160" elapsed="2.176903"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:34.227160" elapsed="2.177205"/>
+</kw>
+<kw name="click the sign In button" owner="LoginResources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:36.407321" level="INFO">Clicking element 'css:button[class='btn']'.</msg>
+<arg>${sign_in_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:36.406851" elapsed="4.040013"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:36.404862" elapsed="4.042002"/>
+</kw>
+<kw name="click the my appointment button" owner="UserResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${My_appointment_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:23:40.446864" elapsed="0.023935"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:40.472505" level="INFO">Clicking element 'css:i[class='fas fa-hospital-alt']'.</msg>
+<arg>${My_appointment_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:40.470799" elapsed="0.647873"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:40.446864" elapsed="0.671808"/>
+</kw>
+<kw name="click pay button" owner="UserResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${pay}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:23:41.122335" elapsed="0.055886"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:41.178221" level="INFO">Clicking element 'xpath:(//a[@class='btn btn-info btn-xs']/i)[1]'.</msg>
+<arg>${pay}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:41.178221" elapsed="1.439684"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:41.118672" elapsed="1.499233"/>
+</kw>
+<kw name="click pay with card" owner="UserResources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:42.618401" level="INFO">Clicking button 'css:button[class='stripe-button-el']'.</msg>
+<arg>${pay_with_card}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:42.618401" elapsed="0.081969"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:23:42.618401" elapsed="0.082991"/>
+</kw>
+<kw name="Fill payment form" owner="UserResources">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:42.701888" level="INFO">Selecting frame 'xpath=//iframe[contains(@src, 'stripe.com')]'.</msg>
+<arg>${mail_iframe}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2024-05-27T12:23:42.701888" elapsed="0.030303"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${mail_feild}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:23:42.732697" elapsed="0.536488"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:43.270508" level="INFO">Typing text 'dinesh@gmail.com' into text field 'xpath://input[@placeholder='Email']'.</msg>
+<arg>${mail_feild}</arg>
+<arg>${mail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:43.270011" elapsed="0.110236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-27T12:23:48.381389" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-27T12:23:43.380744" elapsed="5.000645"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${card_number}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-27T12:23:48.381389" elapsed="0.032141"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:48.413530" level="INFO">Typing text '4242424242424242' into text field 'xpath://input[@placeholder='Card number']'.</msg>
+<arg>${card_number}</arg>
+<arg>${card_num}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:48.413530" elapsed="0.144500"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-27T12:23:53.558584" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-27T12:23:48.558030" elapsed="5.000554"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${month_feild}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:23:53.558584" elapsed="0.031048"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:53.589632" level="INFO">Typing text '05/24' into text field 'xpath://input[@placeholder='MM / YY']'.</msg>
+<arg>${month_feild}</arg>
+<arg>${expDate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:53.589632" elapsed="0.138489"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-27T12:23:58.728736" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-27T12:23:53.728298" elapsed="5.000438"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Ccv_feild}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:23:58.728736" elapsed="0.033180"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:23:58.762412" level="INFO">Typing text '123' into text field 'xpath://input[@placeholder='CVC']'.</msg>
+<arg>${Ccv_feild}</arg>
+<arg>${ccv}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-27T12:23:58.761916" elapsed="0.085605"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-27T12:24:03.847853" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-27T12:23:58.847521" elapsed="5.000332"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${zip_Code_field}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-27T12:24:03.847853" elapsed="0.030111"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-27T12:24:03.877964" level="INFO">Typing text '636004' into text field 'xpath://div[@class='zipCodeInput input bottom']'.</msg>
+<msg time="2024-05-27T12:24:03.993666" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-114.png"&gt;&lt;img src="selenium-screenshot-114.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-27T12:24:03.993666" level="FAIL">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=125.0.6422.77)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6BC481F22+60322]
+	(No symbol) [0x00007FF6BC3FCE99]
+	(No symbol) [0x00007FF6BC2B7CE9]
+	(No symbol) [0x00007FF6BC2FD109]
+	(No symbol) [0x00007FF6BC32C21A]
+	(No symbol) [0x00007FF6BC2FADB6]
+	(No symbol) [0x00007FF6BC32C430]
+	(No symbol) [0x00007FF6BC34BC80]
+	(No symbol) [0x00007FF6BC32BFC3]
+	(No symbol) [0x00007FF6BC2F9617]
+	(No symbol) [0x00007FF6BC2FA211]
+	GetHandleVerifier [0x00007FF6BC79946D+3301613]
+	GetHandleVerifier [0x00007FF6BC7E3693+3605267]
+	GetHandleVerifier [0x00007FF6BC7D9410+3563664]
+	GetHandleVerifier [0x00007FF6BC5342F6+790390]
+	(No symbol) [0x00007FF6BC4074DF]
+	(No symbol) [0x00007FF6BC4033D4]
+	(No symbol) [0x00007FF6BC403562]
+	(No symbol) [0x00007FF6BC3F2F6F]
+	BaseThreadInitThunk [0x00007FFF757A7344+20]
+	RtlUserThreadStart [0x00007FFF76E226B1+33]
+</msg>
+<arg>${zip_Code_field}</arg>
+<arg>${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-05-27T12:24:03.877964" elapsed="0.115702">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=125.0.6422.77)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6BC481F22+60322]
+	(No symbol) [0x00007FF6BC3FCE99]
+	(No symbol) [0x00007FF6BC2B7CE9]
+	(No symbol) [0x00007FF6BC2FD109]
+	(No symbol) [0x00007FF6BC32C21A]
+	(No symbol) [0x00007FF6BC2FADB6]
+	(No symbol) [0x00007FF6BC32C430]
+	(No symbol) [0x00007FF6BC34BC80]
+	(No symbol) [0x00007FF6BC32BFC3]
+	(No symbol) [0x00007FF6BC2F9617]
+	(No symbol) [0x00007FF6BC2FA211]
+	GetHandleVerifier [0x00007FF6BC79946D+3301613]
+	GetHandleVerifier [0x00007FF6BC7E3693+3605267]
+	GetHandleVerifier [0x00007FF6BC7D9410+3563664]
+	GetHandleVerifier [0x00007FF6BC5342F6+790390]
+	(No symbol) [0x00007FF6BC4074DF]
+	(No symbol) [0x00007FF6BC4033D4]
+	(No symbol) [0x00007FF6BC403562]
+	(No symbol) [0x00007FF6BC3F2F6F]
+	BaseThreadInitThunk [0x00007FFF757A7344+20]
+	RtlUserThreadStart [0x00007FFF76E226B1+33]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${pay_button}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-05-27T12:24:03.993666" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${pay_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-27T12:24:03.993666" elapsed="0.000000"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" start="2024-05-27T12:24:03.993666" elapsed="0.000000"/>
+</kw>
+<arg>dinesh@gmail.com</arg>
+<arg>4242424242424242</arg>
+<arg>05/24</arg>
+<arg>123</arg>
+<arg>636004</arg>
+<status status="FAIL" start="2024-05-27T12:23:42.701888" elapsed="21.291778">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=125.0.6422.77)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6BC481F22+60322]
+	(No symbol) [0x00007FF6BC3FCE99]
+	(No symbol) [0x00007FF6BC2B7CE9]
+	(No symbol) [0x00007FF6BC2FD109]
+	(No symbol) [0x00007FF6BC32C21A]
+	(No symbol) [0x00007FF6BC2FADB6]
+	(No symbol) [0x00007FF6BC32C430]
+	(No symbol) [0x00007FF6BC34BC80]
+	(No symbol) [0x00007FF6BC32BFC3]
+	(No symbol) [0x00007FF6BC2F9617]
+	(No symbol) [0x00007FF6BC2FA211]
+	GetHandleVerifier [0x00007FF6BC79946D+3301613]
+	GetHandleVerifier [0x00007FF6BC7E3693+3605267]
+	GetHandleVerifier [0x00007FF6BC7D9410+3563664]
+	GetHandleVerifier [0x00007FF6BC5342F6+790390]
+	(No symbol) [0x00007FF6BC4074DF]
+	(No symbol) [0x00007FF6BC4033D4]
+	(No symbol) [0x00007FF6BC403562]
+	(No symbol) [0x00007FF6BC3F2F6F]
+	BaseThreadInitThunk [0x00007FFF757A7344+20]
+	RtlUserThreadStart [0x00007FFF76E226B1+33]
+</status>
+</kw>
+<arg>mail=dineshkumar@gmaill.com</arg>
+<arg>expDate=2024-05-31 00:00:00</arg>
+<arg>ccv=123</arg>
+<arg>card_num=4242424242424240</arg>
+<arg>zip_code=636004</arg>
+<status status="FAIL" start="2024-05-27T12:23:34.227160" elapsed="29.766506">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=125.0.6422.77)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6BC481F22+60322]
+	(No symbol) [0x00007FF6BC3FCE99]
+	(No symbol) [0x00007FF6BC2B7CE9]
+	(No symbol) [0x00007FF6BC2FD109]
+	(No symbol) [0x00007FF6BC32C21A]
+	(No symbol) [0x00007FF6BC2FADB6]
+	(No symbol) [0x00007FF6BC32C430]
+	(No symbol) [0x00007FF6BC34BC80]
+	(No symbol) [0x00007FF6BC32BFC3]
+	(No symbol) [0x00007FF6BC2F9617]
+	(No symbol) [0x00007FF6BC2FA211]
+	GetHandleVerifier [0x00007FF6BC79946D+3301613]
+	GetHandleVerifier [0x00007FF6BC7E3693+3605267]
+	GetHandleVerifier [0x00007FF6BC7D9410+3563664]
+	GetHandleVerifier [0x00007FF6BC5342F6+790390]
+	(No symbol) [0x00007FF6BC4074DF]
+	(No symbol) [0x00007FF6BC4033D4]
+	(No symbol) [0x00007FF6BC403562]
+	(No symbol) [0x00007FF6BC3F2F6F]
+	BaseThreadInitThunk [0x00007FFF757A7344+20]
+	RtlUserThreadStart [0x00007FFF76E226B1+33]
+</status>
+</kw>
+<kw name="close the browser" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-27T12:24:04.001040" elapsed="2.314182"/>
+</kw>
+<status status="PASS" start="2024-05-27T12:24:04.000544" elapsed="2.314678"/>
+</kw>
+<status status="FAIL" start="2024-05-27T12:23:29.764723" elapsed="36.550499">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=125.0.6422.77)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6BC481F22+60322]
+	(No symbol) [0x00007FF6BC3FCE99]
+	(No symbol) [0x00007FF6BC2B7CE9]
+	(No symbol) [0x00007FF6BC2FD109]
+	(No symbol) [0x00007FF6BC32C21A]
+	(No symbol) [0x00007FF6BC2FADB6]
+	(No symbol) [0x00007FF6BC32C430]
+	(No symbol) [0x00007FF6BC34BC80]
+	(No symbol) [0x00007FF6BC32BFC3]
+	(No symbol) [0x00007FF6BC2F9617]
+	(No symbol) [0x00007FF6BC2FA211]
+	GetHandleVerifier [0x00007FF6BC79946D+3301613]
+	GetHandleVerifier [0x00007FF6BC7E3693+3605267]
+	GetHandleVerifier [0x00007FF6BC7D9410+3563664]
+	GetHandleVerifier [0x00007FF6BC5342F6+790390]
+	(No symbol) [0x00007FF6BC4074DF]
+	(No symbol) [0x00007FF6BC4033D4]
+	(No symbol) [0x00007FF6BC403562]
+	(No symbol) [0x00007FF6BC3F2F6F]
+	BaseThreadInitThunk [0x00007FFF757A7344+20]
+	RtlUserThreadStart [0x00007FFF76E226B1+33]
+</status>
+</test>
+<doc>To validate the Login form</doc>
+<status status="FAIL" start="2024-05-27T12:23:29.124470" elapsed="37.200996"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test valid user payment">Test valid user payment</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
